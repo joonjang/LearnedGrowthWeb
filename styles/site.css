@@ -105,3 +105,111 @@ footer a {
 }
 
 footer a:hover { text-decoration: underline; }
+
+
+/* LANDING PAGE */
+
+main.landing {
+  max-width: 800px;
+  padding: 60px 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+main.landing h1 {
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+main.landing h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.subhead {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 32px;
+  font-weight: 400;
+}
+
+/* Buttons */
+.cta-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 99px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  min-width: 140px;
+}
+
+.btn:hover { opacity: 0.9; }
+
+.btn.secondary {
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn { background: var(--fg); color: var(--bg); }
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  width: 100px;
+  margin: 0 auto;
+}
+
+/* Feature Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 40px 0;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+main.landing .card {
+  border-radius: 16px;
+  padding: 24px;
+}
+
+main.landing .card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+main.landing .card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+  display: block;
+}
