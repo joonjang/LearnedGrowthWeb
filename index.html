@@ -1,65 +1,265 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LearnedGrowth — Transform Your Thinking Habits</title>
-    <meta
-      name="description"
-      content="A simple journaling app to build resilience and optimism using AI-powered reflection."
-    />
-    <link rel="stylesheet" href="/styles/site.css" />
-  </head>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Learned Growth — Reframe Your Thoughts</title>
+      <meta
+         name="description"
+         content="Build the habit of resilience. A guided journaling tool to help you spot negative patterns and think more optimistically step-by-step."
+      />
 
-  <body>
-    <main class="landing">
-      <h1>Transform Your<br />Thinking Habits.</h1>
-      <p class="subhead">
-        A simple journaling tool to help you spot negative patterns, challenge them, and build resilience.
-      </p>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+         rel="stylesheet"
+      />
 
-      <div class="cta-container">
-        <a href="#" class="btn">Download on iOS</a>
-        <a href="#" class="btn secondary">Download on Android</a>
-      </div>
+      <script src="https://unpkg.com/lucide@latest"></script>
 
-      <div class="divider"></div>
+      <link rel="stylesheet" href="/styles/site.css" />
+   </head>
 
-      <h2>How it works</h2>
-      <div class="grid">
-        <div class="card">
-          <span class="icon">✍️</span>
-          <h3>1. Catch the thought</h3>
-          <p>Something happens. Instead of ignoring it, you write down exactly what happened.</p>
-        </div>
+   <body>
+      <nav class="navbar">
+         <div class="container nav-content">
+            <div class="logo">
+               <i data-lucide="sprout" class="logo-icon"></i>
+               <span class="logo-text">Learned Growth</span>
+            </div>
 
-        <div class="card">
-          <span class="icon">🤔</span>
-          <h3>2. Spot the belief</h3>
-          <p>Identify the story you tell yourself about the event. Is it permanent? Is it personal?</p>
-        </div>
+            <div class="nav-actions">
+               <button
+                  id="theme-toggle"
+                  class="theme-btn"
+                  aria-label="Toggle Dark Mode"
+               >
+                  <i data-lucide="moon" class="moon-icon"></i>
+                  <i data-lucide="sun" class="sun-icon"></i>
+               </button>
+            </div>
+         </div>
+      </nav>
 
-        <div class="card">
-          <span class="icon">💡</span>
-          <h3>3. Challenge it with AI</h3>
-          <p>Our AI helper acts as a sounding board to help you dispute negative beliefs and find a new perspective.</p>
-        </div>
+      <main class="landing-layout">
+         <section class="hero-section">
+            <div class="container hero-grid">
+               <div class="hero-text">
+                  <h1>
+                     Reframe Your
+                     <br />
+                     <span>Thoughts.</span>
+                  </h1>
 
-        <div class="card">
-          <span class="icon">🔋</span>
-          <h3>4. Feel the difference</h3>
-          <p>Record how your energy changes when you shift your mindset from pessimistic to optimistic.</p>
-        </div>
-      </div>
+                  <p class="hero-sub">
+                     Resilience isn't a trait. It's a skill. Learned Growth
+                     helps you identify negative thinking patterns and start
+                     <strong>developing the habit of forward thinking</strong>
+                     step-by-step.
+                  </p>
 
-      <footer>
-        <p>&copy; 2026 LearnedGrowth</p>
-        <nav>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-          <a href="/contact">Support</a>
-        </nav>
-      </footer>
-    </main>
-  </body>
+                  <div class="store-buttons">
+                     <a href="#" class="store-btn">
+                        <svg
+                           viewBox="0 0 384 512"
+                           width="20"
+                           fill="currentColor"
+                        >
+                           <path
+                              d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-22.6-67.6-107.8-61.7-161.9zM245.2 71.6c18.8-24.8 30.8-60.6 30.2-96.2-27.8 1.1-61.2 16.4-80 39.3-15.5 21.1-30.8 55.6-28 92.2 30.8 2.3 60.1-15.1 77.8-35.3z"
+                           />
+                        </svg>
+                        <div class="btn-col">
+                           <span class="lbl-small">Download on the</span>
+                           <span class="lbl-large">App Store</span>
+                        </div>
+                     </a>
+
+                     <a href="#" class="store-btn google">
+                        <svg
+                           viewBox="0 0 512 512"
+                           width="20"
+                           fill="currentColor"
+                        >
+                           <path
+                              d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"
+                           />
+                        </svg>
+                        <div class="btn-col">
+                           <span class="lbl-small">GET IT ON</span>
+                           <span class="lbl-large">Google Play</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+
+               <div class="hero-visual">
+                  <div class="phone-frame">
+                     <div class="notch"></div>
+
+                     <div class="screen-content">
+                        <div class="mock-card abc-card">
+                           <div class="card-group">
+                              <span class="card-label">Adversity</span>
+                              <p class="card-text">
+                                 My friend read my message but didn't reply for
+                                 hours.
+                              </p>
+                           </div>
+                           <div class="card-divider"></div>
+                           <div class="card-group">
+                              <span class="card-label">Belief</span>
+                              <p class="card-text">
+                                 They find me annoying. Nobody likes me. I
+                                 always say the wrong thing.
+                              </p>
+                           </div>
+                        </div>
+
+                        <div class="mock-connector">
+                           <div class="connector-line"></div>
+                           <div class="ai-badge amber">
+                              <i data-lucide="sparkles"></i>
+                              <span>Thinking Pattern Observed</span>
+                           </div>
+                           <div class="connector-line"></div>
+                        </div>
+
+                        <div class="mock-card analysis-section">
+                           <div class="analysis-metric">
+                              <div class="metric-head">
+                                 <span class="metric-name">Time</span>
+                                 <span class="metric-val bad">Permanent</span>
+                              </div>
+                              <div class="metric-desc">
+                                 Speech implies this "Always" happens.
+                              </div>
+                              <div class="progress-bar">
+                                 <div class="fill bad" style="width: 85%"></div>
+                              </div>
+                           </div>
+
+                           <div class="analysis-metric">
+                              <div class="metric-head">
+                                 <span class="metric-name">Scope</span>
+                                 <span class="metric-val bad">Everything</span>
+                              </div>
+                              <div class="metric-desc">
+                                 Belief leaks the situation into everything.
+                              </div>
+                              <div class="progress-bar">
+                                 <div class="fill bad" style="width: 90%"></div>
+                              </div>
+                           </div>
+
+                           <div class="analysis-metric">
+                              <div class="metric-head">
+                                 <span class="metric-name">Blame</span>
+                                 <span class="metric-val warning">
+                                    Personal
+                                 </span>
+                              </div>
+                              <div class="metric-desc">
+                                 Internalizes cause ("I'm annoying").
+                              </div>
+                              <div class="progress-bar">
+                                 <div
+                                    class="fill warning"
+                                    style="width: 60%"
+                                 ></div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="mock-card result-section">
+                           <div class="result-label">
+                              <i data-lucide="refresh-cw"></i>
+                              Alternative Perspective
+                           </div>
+                           <div class="result-text">
+                              "A delayed reply is usually about their schedule,
+                              not your personality. Friends often get busy; it
+                              doesn't mean the friendship is over."
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="phone-glow"></div>
+               </div>
+            </div>
+         </section>
+
+         <section class="method-section">
+            <div class="container">
+               <div class="section-header">
+                  <h2>How it Works</h2>
+                  <p>A simple loop to break negative thinking habits.</p>
+               </div>
+
+               <div class="steps-grid">
+                  <div class="step-item">
+                     <div class="step-icon"><i data-lucide="notebook-pen"></i></div>
+                     <h3>1. Catch</h3>
+                     <p>
+                        Capture the moment. Write down what happened and what
+                        you told yourself about it.
+                     </p>
+                  </div>
+                  <div class="step-item">
+                     <div class="step-icon"><i data-lucide="search"></i></div>
+                     <h3>2. Check</h3>
+                     <p>
+                      Our AI recognizes patterns in your speech and guides you to ask better internal questions, helping you challenge your assumptions.
+                    </p>
+                  </div>
+                  <div class="step-item">
+                     <div class="step-icon"><i data-lucide="zap"></i></div>
+                     <h3>3. Change</h3>
+                     <p>
+                        Challenge the assumption. Transform the negative thought into a clearer perspective.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <footer>
+            <div class="container footer-content">
+               <div class="footer-links">
+                  <a href="/privacy.html">Privacy Policy</a>
+                  <a href="/terms.html">Terms of Service</a>
+                  <a href="/contact.html">Support</a>
+               </div>
+               <div>&copy; <span class="dynamic-year"></span> Learned Growth</div>
+            </div>
+         </footer>
+      </main>
+
+      <script>
+         lucide.createIcons();
+
+         const themeToggleBtn = document.getElementById('theme-toggle');
+         const root = document.documentElement;
+
+         const savedTheme = localStorage.getItem('theme');
+         const systemDark = window.matchMedia(
+            '(prefers-color-scheme: dark)',
+         ).matches;
+
+         if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            root.setAttribute('data-theme', 'dark');
+         } else {
+            root.setAttribute('data-theme', 'light');
+         }
+
+         themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+         });
+      </script>
+      <script src="/scripts/global.js"></script>
+   </body>
 </html>

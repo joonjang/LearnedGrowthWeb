@@ -3,58 +3,68 @@
    <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Contact — LearnedGrowth</title>
-      <meta
-         name="description"
-         content="Contact information for LearnedGrowth support and privacy requests."
-      />
+      <title>Contact — Learned Growth</title>
       <link rel="stylesheet" href="/styles/site.css" />
-      <style>
-         /* page-specific override (optional) */
-         main.narrow {
-            max-width: 820px;
-         }
-      </style>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      <script src="https://unpkg.com/lucide@latest"></script>
    </head>
 
    <body>
-      <main class="narrow">
+      <nav class="navbar">
+         <div class="container nav-content">
+            <a href="/index.html" class="logo">
+               <i data-lucide="sprout" class="logo-icon"></i>
+               <span class="logo-text">Learned Growth</span>
+            </a>
+            <div class="nav-actions">
+               <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                  <i data-lucide="moon" class="moon-icon"></i>
+                  <i data-lucide="sun" class="sun-icon"></i>
+               </button>
+            </div>
+         </div>
+      </nav>
+
+      <main class="doc-content">
          <h1>Contact</h1>
-         <p>
-            Need help, want to request account deletion, or have a privacy
-            question? Reach us here:
-         </p>
+         <p>Need help, want to request account deletion, or have a privacy question? Reach us here:</p>
 
          <div class="card">
             <ul>
-               <li>
-                  <strong>Support:</strong>
-                  <a href="mailto:support@learnedgrowth.com">
-                     support@learnedgrowth.com
-                  </a>
-               </li>
-               <li>
-                  <strong>Privacy:</strong>
-                  <a href="mailto:legal@learnedgrowth.com">
-                     legal@learnedgrowth.com
-                  </a>
-               </li>
+               <li><strong>Support:</strong> <a href="mailto:support@learnedgrowth.com">support@learnedgrowth.com</a></li>
+               <li><strong>Privacy:</strong> <a href="mailto:legal@learnedgrowth.com">legal@learnedgrowth.com</a></li>
             </ul>
          </div>
 
-         <p class="small">
-            If you are in immediate danger, contact local emergency services
-            right away.
-         </p>
+         <p class="small">If you are in immediate danger, contact local emergency services right away.</p>
 
-         <footer>
-            <p>&copy; 2026 LearnedGrowth</p>
+         <footer class="doc-footer">
+            <div>&copy; <span class="dynamic-year"></span> Learned Growth</div>
             <nav>
-               <a href="/index">Home</a>
-               <a href="/privacy">Privacy Policy</a>
-               <a href="/terms">Terms of Service</a>
+               <a href="/index.html">Home</a>
+               <a href="/privacy.html">Privacy Policy</a>
+               <a href="/terms.html">Terms of Service</a>
             </nav>
          </footer>
       </main>
+
+      <script>
+         lucide.createIcons();
+         const themeToggleBtn = document.getElementById('theme-toggle');
+         const root = document.documentElement;
+         const savedTheme = localStorage.getItem('theme');
+         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+         if (savedTheme === 'dark' || (!savedTheme && systemDark)) { root.setAttribute('data-theme', 'dark'); } 
+         else { root.setAttribute('data-theme', 'light'); }
+         themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+         });
+      </script>
+      <script src="/scripts/global.js"></script>
    </body>
 </html>

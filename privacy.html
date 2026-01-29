@@ -3,22 +3,49 @@
    <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>LearnedGrowth Privacy Policy</title>
+      <title>Learned Growth Privacy Policy</title>
       <meta
          name="description"
-         content="Privacy Policy for LearnedGrowth journaling app."
+         content="Privacy Policy for Learned Growth journaling app."
       />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+         rel="stylesheet"
+      />
+      <script src="https://unpkg.com/lucide@latest"></script>
       <link rel="stylesheet" href="/styles/site.css" />
    </head>
 
    <body>
-      <main>
+      <nav class="navbar">
+         <div class="container nav-content">
+            <div class="logo">
+               <i data-lucide="sprout" class="logo-icon"></i>
+               <span class="logo-text">Learned Growth</span>
+            </div>
+
+            <div class="nav-actions">
+               <button
+                  id="theme-toggle"
+                  class="theme-btn"
+                  aria-label="Toggle Dark Mode"
+               >
+                  <i data-lucide="moon" class="moon-icon"></i>
+                  <i data-lucide="sun" class="sun-icon"></i>
+               </button>
+            </div>
+         </div>
+      </nav>
+
+      <main class="doc-content">
          <header>
             <h1>Privacy Policy</h1>
             <div class="meta">
                <div>
                   <strong>App:</strong>
-                  LearnedGrowth (“Learned Growth”, “we”, “us”)
+                  Learned Growth (“Learned Growth”, “we”, “us”)
                </div>
                <div>
                   <strong>Website:</strong>
@@ -26,14 +53,14 @@
                </div>
                <div>
                   <strong>Last Updated:</strong>
-                  January 8, 2026
+                  <span class="dynamic-date"></span>
                </div>
             </div>
          </header>
 
          <section class="card">
             <p>
-               LearnedGrowth is a journaling app inspired by the ABCDE steps
+               Learned Growth is a journaling app inspired by the ABCDE steps
                from
                <em>Learned Optimism</em>
                . This Privacy Policy explains what information we collect, how
@@ -197,7 +224,7 @@
          </ul>
 
          <h2>5) Who we share information with</h2>
-         <p>We share information only as needed to operate LearnedGrowth:</p>
+         <p>We share information only as needed to operate Learned Growth:</p>
          <ul>
             <li>
                <strong>Authentication providers:</strong>
@@ -272,7 +299,7 @@
 
          <h2>9) Children’s privacy</h2>
          <p>
-            LearnedGrowth is not intended for children under
+            Learned Growth is not intended for children under
             <strong>13</strong>
             . We do not knowingly collect personal information from children
             under 13. If you believe a child has provided personal information,
@@ -281,7 +308,7 @@
 
          <h2>10) International users</h2>
          <p>
-            If you use LearnedGrowth outside Canada, your information may be
+            If you use Learned Growth outside Canada, your information may be
             processed in countries where our service providers operate. We take
             steps designed to protect your information consistent with this
             policy and applicable law.
@@ -400,7 +427,7 @@
          <h3>Do Not Track</h3>
          <p>
             Some browsers offer a “Do Not Track” (DNT) signal. There is no
-            uniform industry standard for DNT. At this time, LearnedGrowth does
+            uniform industry standard for DNT. At this time, Learned Growth does
             not respond to DNT signals.
          </p>
 
@@ -433,14 +460,36 @@
             </ul>
          </div>
 
-         <footer>
-            <p>&copy; 2026 LearnedGrowth</p>
+         <footer class="doc-footer">
+            <div>&copy; <span class="dynamic-year"></span> Learned Growth</div>
             <nav>
-               <a href="/index">Home</a>
-               <a href="/terms">Terms of Service</a>
-               <a href="/contact">Support</a>
+               <a href="/index.html">Home</a>
+               <a href="/terms.html">Terms of Service</a>
+               <a href="/contact.html">Support</a>
             </nav>
          </footer>
       </main>
+
+      <script>
+         lucide.createIcons();
+         const themeToggleBtn = document.getElementById('theme-toggle');
+         const root = document.documentElement;
+         const savedTheme = localStorage.getItem('theme');
+         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+         if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            root.setAttribute('data-theme', 'dark');
+         } else {
+            root.setAttribute('data-theme', 'light');
+         }
+
+         themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+         });
+      </script>
+      <script src="/scripts/global.js"></script>
    </body>
 </html>

@@ -3,22 +3,49 @@
    <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>LearnedGrowth Terms of Service</title>
+      <title>Learned Growth Terms of Service</title>
       <meta
          name="description"
-         content="Terms of Service for LearnedGrowth journaling app."
+         content="Terms of Service for Learned Growth journaling app."
       />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+         rel="stylesheet"
+      />
+      <script src="https://unpkg.com/lucide@latest"></script>
       <link rel="stylesheet" href="/styles/site.css" />
    </head>
 
    <body>
-      <main>
+      <nav class="navbar">
+         <div class="container nav-content">
+            <div class="logo">
+               <i data-lucide="sprout" class="logo-icon"></i>
+               <span class="logo-text">Learned Growth</span>
+            </div>
+
+            <div class="nav-actions">
+               <button
+                  id="theme-toggle"
+                  class="theme-btn"
+                  aria-label="Toggle Dark Mode"
+               >
+                  <i data-lucide="moon" class="moon-icon"></i>
+                  <i data-lucide="sun" class="sun-icon"></i>
+               </button>
+            </div>
+         </div>
+      </nav>
+
+      <main class="doc-content">
          <header>
             <h1>Terms of Service</h1>
             <div class="meta">
                <div>
                   <strong>App:</strong>
-                  LearnedGrowth (“Learned Growth”, “we”, “us”)
+                  Learned Growth (“Learned Growth”, “we”, “us”)
                </div>
                <div>
                   <strong>Website:</strong>
@@ -26,7 +53,7 @@
                </div>
                <div>
                   <strong>Effective Date:</strong>
-                  January 8, 2026
+                  <span class="dynamic-date"></span>
                </div>
             </div>
          </header>
@@ -34,23 +61,23 @@
          <section class="card">
             <p>
                These Terms of Service (“Terms”) govern your use of the
-               LearnedGrowth app and related services (the “Service”). By using
+               Learned Growth app and related services (the “Service”). By using
                the Service, you agree to these Terms.
             </p>
             <p class="small">If you don’t agree, don’t use the Service.</p>
          </section>
 
-         <h2>1) What LearnedGrowth is (and isn’t)</h2>
+         <h2>1) What Learned Growth is (and isn’t)</h2>
          <div class="card">
             <p>
-               LearnedGrowth is a journaling and self-reflection tool inspired
+               Learned Growth is a journaling and self-reflection tool inspired
                by the ABCDE framework in
                <em>Learned Optimism</em>
                . It may offer AI-generated analysis to help you reflect on your
                entries.
             </p>
             <p>
-               <strong>LearnedGrowth is not medical care.</strong>
+               <strong>Learned Growth is not medical care.</strong>
                We are not a healthcare provider and we do not provide therapy,
                diagnosis, treatment, or emergency services.
             </p>
@@ -146,7 +173,7 @@
          <h2>7) Privacy</h2>
          <p>
             Our
-            <a href="/privacy">Privacy Policy</a>
+            <a href="/privacy.html">Privacy Policy</a>
             explains how we collect and use information. By using the Service,
             you agree to our Privacy Policy.
          </p>
@@ -166,7 +193,7 @@
 
          <h2>10) Limitation of liability</h2>
          <p>
-            To the fullest extent permitted by law, LearnedGrowth and its
+            To the fullest extent permitted by law, Learned Growth and its
             operators will not be liable for indirect, incidental, special,
             consequential, or punitive damages, or any loss of data, profits, or
             goodwill arising from your use of the Service.
@@ -212,14 +239,36 @@
             </ul>
          </div>
 
-         <footer>
-            <p>&copy; 2026 LearnedGrowth</p>
+         <footer class="doc-footer">
+            <div>&copy; <span class="dynamic-year"></span> Learned Growth</div>
             <nav>
-               <a href="/index">Home</a>
-               <a href="/privacy">Privacy Policy</a>
-               <a href="/contact">Support</a>
+               <a href="/index.html">Home</a>
+               <a href="/privacy.html">Privacy Policy</a>
+               <a href="/contact.html">Support</a>
             </nav>
          </footer>
       </main>
+
+      <script>
+         lucide.createIcons();
+         const themeToggleBtn = document.getElementById('theme-toggle');
+         const root = document.documentElement;
+         const savedTheme = localStorage.getItem('theme');
+         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+         if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            root.setAttribute('data-theme', 'dark');
+         } else {
+            root.setAttribute('data-theme', 'light');
+         }
+
+         themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+         });
+      </script>
+      <script src="/scripts/global.js"></script>
    </body>
 </html>
