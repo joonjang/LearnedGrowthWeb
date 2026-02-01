@@ -103,7 +103,7 @@ h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; le
   display: inline-flex; align-items: center; gap: 10px;
   transition: transform 0.1s;
   border: 1px solid rgba(255,255,255,0.1);
-  cursor: default;
+  cursor: pointer;
 }
 .store-btn:active { transform: scale(0.95); opacity: 0.8; }
 .store-btn.google { background: transparent; color: var(--fg); border: 1px solid var(--border); }
