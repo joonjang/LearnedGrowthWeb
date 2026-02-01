@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.joonjang.LearnedGrowth",
+      "sha256_cert_fingerprints": [
+        "5C:77:4B:CB:BB:6E:97:26:23:15:09:D4:67:31:09:1C:9A:B4:0A:C2:70:D9:4A:02:40:12:F3:43:E6:EC:D7:8E"
+      ]
+    }
+  }
+]
