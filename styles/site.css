@@ -96,7 +96,10 @@ h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; le
 .hero-sub { font-size: 1.25rem; color: var(--muted); margin-bottom: 40px; max-width: 480px; }
 
 /* Buttons */
-.store-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.store-buttons { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .store-buttons { justify-content: center; }
+}
 .store-btn {
   background: var(--fg); color: var(--bg);
   padding: 10px 20px; border-radius: 12px;
@@ -106,8 +109,35 @@ h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; le
   cursor: pointer;
 }
 .store-btn:active { transform: scale(0.95); opacity: 0.8; }
-.store-btn.google { background: transparent; color: var(--fg); border: 1px solid var(--border); }
-[data-theme="dark"] .store-btn.google { background: #fff; color: #000; }
+
+.store-btn.badge-container {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: auto;
+  width: auto;
+  display: inline-flex;
+  overflow: visible;
+  transition: opacity 0.2s;
+}
+.store-btn.badge-container:hover {
+  opacity: 0.8;
+  transform: none;
+}
+.store-btn.badge-container:active {
+  transform: none;
+}
+.apple-img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+.google-img {
+  height: 72px;
+  width: auto;
+  display: block;
+  transform: translateY(-2px);
+}
 
 .btn-col { display: flex; flex-direction: column; line-height: 1.1; }
 .lbl-small { font-size: 10px; opacity: 0.8; }
