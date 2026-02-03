@@ -238,19 +238,6 @@ h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; le
   filter: blur(50px); z-index: 1; pointer-events: none;
 }
 
-/* --- SECTIONS --- */
-.method-section { padding: 80px 0; background: var(--surface); }
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-header h2 { font-size: 2rem; margin: 0 0 16px; color: var(--fg); }
-.section-header p { color: var(--muted); }
-
-.steps-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-@media (min-width: 768px) { .steps-grid { grid-template-columns: 1fr 1fr 1fr; } }
-.step-item { background: var(--bg); padding: 32px; border-radius: 20px; border: 1px solid var(--border); }
-.step-icon { width: 48px; height: 48px; background: var(--surface); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.step-item h3 { margin: 0 0 12px; font-size: 1.25rem; color: var(--fg); }
-.step-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-
 /* --- FOOTER --- */
 footer { padding: 80px 0; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); }
 .footer-content { text-align: center; }
