@@ -101,7 +101,6 @@ h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; le
 .hero-sub { font-size: 1.25rem; color: var(--muted); margin-bottom: 40px; max-width: 420px; }
 
 /* Buttons */
-.store-buttons { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 600px) {
   .store-buttons { justify-content: center; }
 }
@@ -132,16 +131,26 @@ h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; le
 .store-btn.badge-container:active {
   transform: none;
 }
+/* Buttons */
+.store-buttons { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  flex-wrap: wrap; 
+}
+
+
 .apple-img {
-  height: 52px;
+  height: 48px; /* Standard visible height */
   width: auto;
   display: block;
 }
+
 .google-img {
-  height: 72px;
+  height: 72px; /* 1.5x the Apple height to account for transparent padding */
   width: auto;
   display: block;
-  transform: translateY(-2px);
+  /* Removed translateY - flexbox aligns them correctly with these sizes */
 }
 
 .btn-col { display: flex; flex-direction: column; line-height: 1.1; }
