@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Learned Growth — Reframe Your Thoughts</title>
+      <title>Learned Growth</title>
       
       <meta
          name="description"
@@ -26,6 +26,7 @@
 
       <script src="https://unpkg.com/lucide@latest"></script>
 
+      <link rel="icon" type="image/svg+xml" id="favicon" />
       <link rel="stylesheet" href="/styles/site.css" />
    </head>
 
@@ -204,6 +205,22 @@
 
       <script>
          lucide.createIcons();
+
+         const favicon = document.getElementById('favicon');
+         const sproutIcon = document.querySelector('.logo .logo-icon');
+         if (favicon && sproutIcon) {
+            const svg = sproutIcon.cloneNode(true);
+            const iconColor = getComputedStyle(sproutIcon).color;
+            svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            svg.setAttribute('color', iconColor);
+            svg.setAttribute('width', '64');
+            svg.setAttribute('height', '64');
+            const svgData = new XMLSerializer().serializeToString(svg);
+            favicon.setAttribute(
+               'href',
+               `data:image/svg+xml,${encodeURIComponent(svgData)}`,
+            );
+         }
 
          const themeToggleBtn = document.getElementById('theme-toggle');
          const root = document.documentElement;
