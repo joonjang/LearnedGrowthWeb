@@ -90,10 +90,15 @@ a { text-decoration: none; color: inherit; }
 .hero-section { padding: 80px 0; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
 @media (min-width: 900px) { .hero-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 899px) {
+  .hero-text { margin: 0 auto; max-width: 520px; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .store-buttons { justify-content: center; }
+}
 
 h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 800; margin: 0 0 24px; letter-spacing: -0.03em; }
 
-.hero-sub { font-size: 1.25rem; color: var(--muted); margin-bottom: 40px; max-width: 480px; }
+.hero-sub { font-size: 1.25rem; color: var(--muted); margin-bottom: 40px; max-width: 420px; }
 
 /* Buttons */
 .store-buttons { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
