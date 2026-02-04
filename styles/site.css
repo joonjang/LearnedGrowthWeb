@@ -111,6 +111,11 @@ h1 span { color: var(--primary); }
 .apple-img { height: 60px; width: auto; display: block; } 
 .google-img { height: 90px; width: auto; display: block; } 
 
+@media (max-width: 600px) {
+  .apple-img { height: 44px; }
+  .google-img { height: 64px; }
+}
+
 /* --- HERO PHONE MOCKUP (Restored from your snippet) --- */
 .hero-visual { position: relative; display: flex; justify-content: center; padding: 20px; }
 
