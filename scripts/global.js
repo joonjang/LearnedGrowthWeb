@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- CONFIGURATION: EDIT HERE ---
   const SITE_DATA = {
     // 1. The date your Legal Docs were last updated
-    lastUpdated: "January 29, 2026",
+    lastUpdated: "Februrary 3, 2026",
     
     // 2. The current year for the Footer copyright
     currentYear: new Date().getFullYear() // Automatically gets 2026, 2027...
