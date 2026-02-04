@@ -206,6 +206,8 @@ h1 span { color: var(--primary); }
 .bg-surface { background: var(--surface); }
 
 .section-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.section-header.align-left { text-align: left; }
+.section-header.align-left .section-tag { display: block; text-align: center; }
 .section-tag { 
     color: var(--primary); font-weight: 700; text-transform: uppercase; 
     font-size: 0.85rem; letter-spacing: 0.05em; display: block; margin-bottom: 12px;
